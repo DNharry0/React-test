@@ -1,5 +1,6 @@
 // import { Route, Routes, Navigate } from 'react-router-dom';
 import Router from 'components/Router';
+import Loader from 'components/loader/Loader';
 // import Layout from 'components/Layout';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { app } from 'firebaseApp';
@@ -30,7 +31,8 @@ function App() {
   return (
     // <Layout>
     <>
-      {init ? <Router isAuthenticated={isAuthenticated} /> : "loading"}
+    <Loader />
+      {init ? <Router isAuthenticated={isAuthenticated} /> : <Loader />}
       <ToastContainer />
     </>
     // </Layout>
